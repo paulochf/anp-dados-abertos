@@ -13,13 +13,13 @@ if not path_to_save.is_dir():
 for link in links:
     r = requests.get(link)
     if r.status_code == requests.codes['ok']:
-        root = ET.fromstring(r.text)
+        root = ET.fromstring(r.text.encode("latin-1").decode("UTF-8"))
         print(f"# Finalizado o download do arquivo {link}.")
         #seleciona o ano 
         file_to_save = link[-8:]
         file_to_save = path_to_save / f'{file_to_save}'
         tree = ET.ElementTree(root)
-        tree.write(file_to_save)
+        tree.write(file_to_save, encoding='latin-1')
         print(f"## Arquivo {link} salvo.")
     else:
         print(f"### STATUS: {r.status.code} => Não foi possível realizar o download do arquivo {link}.")
