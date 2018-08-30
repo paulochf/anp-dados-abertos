@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pathlib import Path
 import os
+import 
 
 precoRevenda = namedtuple('PrecoRevenda', 'valor_compra valor_venda unidade municipio regiao estado bandeira produto razao_social_revenda data_coleta')
 
@@ -115,6 +116,26 @@ class PrecosParser():
             with open(fullpath, 'w', encoding='latin-1') as file_:
                 file_.write("valor_compra;valor_venda;unidade;municipio;regiao;estado;bandeira;produto;razao_social_revenda;data_coleta\n")
                 for data in self.data_container:
+                    if not data.valor_compra:
+                        data.valor_compra = float('nan')
+                    if not data.valor_venda:
+                        data.valor_venda = float('nan')
+                    if not data.unidade:
+                        data.unidade = float('nan')
+                    if not data.municipio:
+                        data.municipio = float('nan')
+                    if not data.regiao:
+                        data.regiao = float('nan')
+                    if not data.estado:
+                        data.estado = float('nan')
+                    if not data.bandeira:
+                        data.bandeira = float('nan')
+                    if not data.produto:
+                        data.produto = float('nan')
+                    if not data.razao_social_revenda:
+                        data.razao_social_revenda = float('nan')
+                    if not data.data_coleta:
+                        data.data_coleta = float('nan')
                     file_.write(f"{data.valor_compra};{data.valor_venda};{data.unidade};{data.municipio};{data.regiao};{data.estado};{data.bandeira};{data.produto};{data.razao_social_revenda};{data.data_coleta}\n")
             print(f"Arquivo ./data/{nomearquivo}.csv criado com sucesso.")
     
@@ -147,5 +168,25 @@ class PrecosParser():
                 file_.write("valor_compra;valor_venda;unidade;municipio;regiao;estado;bandeira;produto;razao_social_revenda;data_coleta\n")
                 for lista_precos in cls.container:
                     for data in lista_precos:
+                        if not data.valor_compra:
+                            data.valor_compra = float('nan')
+                        if not data.valor_venda:
+                            data.valor_venda = float('nan')
+                        if not data.unidade:
+                            data.unidade = float('nan')
+                        if not data.municipio:
+                            data.municipio = float('nan')
+                        if not data.regiao:
+                            data.regiao = float('nan')
+                        if not data.estado:
+                            data.estado = float('nan')
+                        if not data.bandeira:
+                            data.bandeira = float('nan')
+                        if not data.produto:
+                            data.produto = float('nan')
+                        if not data.razao_social_revenda:
+                            data.razao_social_revenda = float('nan')
+                        if not data.data_coleta:
+                            data.data_coleta = float('nan')
                         file_.write(f"{data.valor_compra};{data.valor_venda};{data.unidade};{data.municipio};{data.regiao};{data.estado};{data.bandeira};{data.produto};{data.razao_social_revenda};{data.data_coleta}\n")
             print(f"Arquivo ./data/{nomearquivo}.csv criado com sucesso.")
