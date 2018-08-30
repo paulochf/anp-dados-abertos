@@ -149,9 +149,3 @@ class PrecosParser():
                     for data in lista_precos:
                         file_.write(f"{data.valor_compra};{data.valor_venda};{data.unidade};{data.municipio};{data.regiao};{data.estado};{data.bandeira};{data.produto};{data.razao_social_revenda};{data.data_coleta}\n")
             print(f"Arquivo ./data/{nomearquivo}.csv criado com sucesso.")
-
-
-
-
-                        
-

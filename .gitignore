@@ -1,1 +1,4 @@
 *.xml
+*.csv
+*pyc
+/schema/__pycache__
