@@ -72,25 +72,55 @@ class PrecosParser():
             coleta_preco = dict()
             for data in child:
                 if data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C0':
-                    coleta_preco['valor_compra'] = data.text
+                    if not coleta_preco['valor_compra']:
+                        coleta_preco['valor_compra'] = float('nan')
+                    else:
+                        coleta_preco['valor_compra'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C1':
-                    coleta_preco['valor_venda'] = data.text
+                    if not coleta_preco['valor_venda']:
+                        coleta_preco['valor_venda'] = float('nan')
+                    else:
+                        coleta_preco['valor_venda'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C2':
-                    coleta_preco['unidade'] = data.text
+                    if not coleta_preco['unidade']:
+                        coleta_preco['unidade'] = float('nan')
+                    else:
+                        coleta_preco['unidade'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C3':
-                    coleta_preco['municipio'] = data.text
+                    if not coleta_preco['municipio']:
+                        coleta_preco['municipio'] = float('nan')
+                    else:
+                        coleta_preco['municipio'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C4':
-                    coleta_preco['regiao'] = data.text
+                    if not coleta_preco['regiao']:
+                        coleta_preco['regiao'] = float('nan')
+                    else:
+                        coleta_preco['regiao'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C5':
-                    coleta_preco['estado'] = data.text
+                    if not coleta_preco['estado']:
+                        coleta_preco['estado'] = float('nan')
+                    else:
+                        coleta_preco['estado'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C6':
-                    coleta_preco['bandeira'] = data.text
+                    if not coleta_preco['bandeira']:
+                        coleta_preco['bandeira'] = float('nan')
+                    else:
+                        coleta_preco['bandeira'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C7':
-                    coleta_preco['produto'] = data.text
+                    if not coleta_preco['produto']:
+                        coleta_preco['produto'] = float('nan')
+                    else:
+                        coleta_preco['produto'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C8':
-                    coleta_preco['razao_social_revenda'] = data.text
+                    if not coleta_preco['razao_social_revenda']:
+                        coleta_preco['razao_social_revenda'] = float('nan')
+                    else:
+                        coleta_preco['razao_social_revenda'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C9':
-                    coleta_preco['data_coleta'] = data.text
+                    if not coleta_preco['data_coleta']:
+                        coleta_preco['data_coleta'] = float('nan')
+                    else:
+                        coleta_preco['data_coleta'] = data.text
             self.data_price = precoRevenda(**coleta_preco)
             self.data_container.append(self.data_price)
         del self.data_price
@@ -115,26 +145,6 @@ class PrecosParser():
             with open(fullpath, 'w', encoding='latin-1') as file_:
                 file_.write("valor_compra;valor_venda;unidade;municipio;regiao;estado;bandeira;produto;razao_social_revenda;data_coleta\n")
                 for data in self.data_container:
-                    if not data.valor_compra:
-                        data.valor_compra = float('nan')
-                    if not data.valor_venda:
-                        data.valor_venda = float('nan')
-                    if not data.unidade:
-                        data.unidade = float('nan')
-                    if not data.municipio:
-                        data.municipio = float('nan')
-                    if not data.regiao:
-                        data.regiao = float('nan')
-                    if not data.estado:
-                        data.estado = float('nan')
-                    if not data.bandeira:
-                        data.bandeira = float('nan')
-                    if not data.produto:
-                        data.produto = float('nan')
-                    if not data.razao_social_revenda:
-                        data.razao_social_revenda = float('nan')
-                    if not data.data_coleta:
-                        data.data_coleta = float('nan')
                     file_.write(f"{data.valor_compra};{data.valor_venda};{data.unidade};{data.municipio};{data.regiao};{data.estado};{data.bandeira};{data.produto};{data.razao_social_revenda};{data.data_coleta}\n")
             print(f"Arquivo ./data/{nomearquivo}.csv criado com sucesso.")
     
@@ -167,25 +177,5 @@ class PrecosParser():
                 file_.write("valor_compra;valor_venda;unidade;municipio;regiao;estado;bandeira;produto;razao_social_revenda;data_coleta\n")
                 for lista_precos in cls.container:
                     for data in lista_precos:
-                        if not data.valor_compra:
-                            data.valor_compra = float('nan')
-                        if not data.valor_venda:
-                            data.valor_venda = float('nan')
-                        if not data.unidade:
-                            data.unidade = float('nan')
-                        if not data.municipio:
-                            data.municipio = float('nan')
-                        if not data.regiao:
-                            data.regiao = float('nan')
-                        if not data.estado:
-                            data.estado = float('nan')
-                        if not data.bandeira:
-                            data.bandeira = float('nan')
-                        if not data.produto:
-                            data.produto = float('nan')
-                        if not data.razao_social_revenda:
-                            data.razao_social_revenda = float('nan')
-                        if not data.data_coleta:
-                            data.data_coleta = float('nan')
                         file_.write(f"{data.valor_compra};{data.valor_venda};{data.unidade};{data.municipio};{data.regiao};{data.estado};{data.bandeira};{data.produto};{data.razao_social_revenda};{data.data_coleta}\n")
             print(f"Arquivo ./data/{nomearquivo}.csv criado com sucesso.")
