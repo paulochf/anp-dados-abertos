@@ -2,3 +2,4 @@
 *.csv
 *pyc
 /schema/__pycache__
+/venv
