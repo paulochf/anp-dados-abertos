@@ -1,13 +1,13 @@
-# PARSER DA SÉRIE HISTÓRICA DE PREÇOS DE COMBUSTÍVEIS:
+# PARSER DA SÉRIE HISTÓRICA DE PREÇOS DE COMBUSTÍVEIS
 ### ORIGEM DOS DADOS
 #### http://www.anp.gov.br/dados-abertos-anp
 #### http://dados.gov.br/dataset?q=anp
 
 ### ESTRUTURA DE DIRETÓRIOS
-data - Armazena os arquivos .csv gerados a partir dos arquivos xml processados;<br>
-docs - Armazena o PDF com os metadados dos arquivos xml da série histórica;<br>
-raw - Armazena os arquivos xml a serem parseados;<br>
-schema - Armazena a Classe PrecosParser utilizada para processar os arquivos xml;<br>
+data - Armazena os arquivos .csv gerados a partir dos arquivos xml processados<br>
+docs - Armazena o PDF com os metadados dos arquivos xml da série histórica<br>
+raw - Armazena os arquivos xml a serem parseados<br>
+schema - Armazena a Classe PrecosParser utilizada para processar os arquivos xml<br>
 
 ### INSTRUÇÕES:
 
