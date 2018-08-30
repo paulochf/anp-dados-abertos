@@ -2,7 +2,6 @@ import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pathlib import Path
 import os
-import 
 
 precoRevenda = namedtuple('PrecoRevenda', 'valor_compra valor_venda unidade municipio regiao estado bandeira produto razao_social_revenda data_coleta')
 
