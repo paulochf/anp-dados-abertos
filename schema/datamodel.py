@@ -72,52 +72,52 @@ class PrecosParser():
             coleta_preco = dict()
             for data in child:
                 if data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C0':
-                    if not coleta_preco['valor_compra']:
+                    if not data.text:
                         coleta_preco['valor_compra'] = float('nan')
                     else:
                         coleta_preco['valor_compra'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C1':
-                    if not coleta_preco['valor_venda']:
+                    if not data.text:
                         coleta_preco['valor_venda'] = float('nan')
                     else:
                         coleta_preco['valor_venda'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C2':
-                    if not coleta_preco['unidade']:
+                    if not data.text:
                         coleta_preco['unidade'] = float('nan')
                     else:
                         coleta_preco['unidade'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C3':
-                    if not coleta_preco['municipio']:
+                    if not data.text:
                         coleta_preco['municipio'] = float('nan')
                     else:
                         coleta_preco['municipio'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C4':
-                    if not coleta_preco['regiao']:
+                    if not data.text:
                         coleta_preco['regiao'] = float('nan')
                     else:
                         coleta_preco['regiao'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C5':
-                    if not coleta_preco['estado']:
+                    if not data.text:
                         coleta_preco['estado'] = float('nan')
                     else:
                         coleta_preco['estado'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C6':
-                    if not coleta_preco['bandeira']:
+                    if not data.text:
                         coleta_preco['bandeira'] = float('nan')
                     else:
                         coleta_preco['bandeira'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C7':
-                    if not coleta_preco['produto']:
+                    if not data.text:
                         coleta_preco['produto'] = float('nan')
                     else:
                         coleta_preco['produto'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C8':
-                    if not coleta_preco['razao_social_revenda']:
+                    if not data.text:
                         coleta_preco['razao_social_revenda'] = float('nan')
                     else:
                         coleta_preco['razao_social_revenda'] = data.text
                 elif data.tag == '{urn:schemas-microsoft-com:xml-analysis:rowset}C9':
-                    if not coleta_preco['data_coleta']:
+                    if not data.text:
                         coleta_preco['data_coleta'] = float('nan')
                     else:
                         coleta_preco['data_coleta'] = data.text
