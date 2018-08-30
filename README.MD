@@ -16,6 +16,6 @@ schema - Armazena a Classe PrecosParser utilizada para processar os arquivos xml
 
 ### **NOTA:**
 
-> O presente repositório não é institucional, portanto, qualquer comunicação sobre os dados deve ser dirigida diretamente a instituição pública. O único propósito dessa página é fornecer um formato de arquivo mais acessível ao grande público
+> O presente repositório não é institucional, portanto, qualquer comunicação sobre os dados devem ser dirigidas diretamente a instituição pública. O único propósito dessa página é fornecer um formato de arquivo mais acessível ao grande público
 
 
