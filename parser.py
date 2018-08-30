@@ -18,7 +18,7 @@ if len(files) !=0:
         PrecosParser.add_data(filedata.data_container)
     #exporta um arquivo único com todos os dados processados
     PrecosParser.exporta_dados_csv('serie_precos_completa')
-    print(f"Finalizado o processamento de {index} arquivos.")
+    print(f"Finalizado o processamento de {index} arquivo(s).")
 else:
-    print("Não há arquivo xml a ser processado.")
+    print("Não há arquivo(s) xml a ser(em) processado(s).")
 

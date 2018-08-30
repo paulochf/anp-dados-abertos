@@ -1,22 +1,21 @@
-# ORIGEM DOS DADOS: 
+# PARSER DA SÉRIE HISTÓRICA DE PREÇOS DE COMBUSTÍVEIS:
+### ORIGEM DOS DADOS
 #### http://www.anp.gov.br/dados-abertos-anp
+#### http://dados.gov.br/dataset?q=anp
 
-## ESTRUTURA DE DIRETÓRIOS
-./docs - Armazena o PDF com os metadados dos arquivos xml da série histórica<br>
-./raw - Armazena os arquivos xml a serem parseados<br>
-./schema - Arquivo com Classe utilzizada para parsear os arquivos xml<br>
+### ESTRUTURA DE DIRETÓRIOS
+data - Armazena os arquivos .csv gerados a partir dos arquivos xml processados;<br>
+docs - Armazena o PDF com os metadados dos arquivos xml da série histórica;<br>
+raw - Armazena os arquivos xml a serem parseados;<br>
+schema - Armazena a Classe PrecosParser utilizada para processar os arquivos xml;<br>
 
-## PARSER DA SÉRIE HISTÓRICA DE PREÇOS DE COMBUSTÍVEIS
+### INSTRUÇÕES:
 
-### SCHEMA DOS ARQUIVOS XML
+1. O arquivo `getdata.py` deve ser utilizado para realizar o download dos arquivos xml disponibilizados.
+2. O arquivo `parser.py` deve ser utilizado para processar os arquivos xml e salvar os respectivos arquivos .csv.
 
-#### C0 - Valor de Compra
-#### C1 - Valor de Venda
-#### C2 - Unidade de Medida
-#### C3 - Município
-#### C4 - Região - Sigla
-#### C5 - Estado - Sigla
-#### C6 - Bandeira
-#### C7 - Produto
-#### C8 - Razão Social da Revenda
-#### C9 - Data da coleta
+### **NOTA:**
+
+> O presente repositório não é institucional, portanto, qualquer comunicação sobre os dados deve ser dirigida diretamente a instituição pública. O único propósito dessa página é fornecer um formato de arquivo mais acessível ao grande público
+
+
