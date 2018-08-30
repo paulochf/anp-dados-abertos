@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### **DOWNLOAD MANUAL:**
 
-Caso você não deseje realizar o procedimento de geração dos arquivo .csv programaticamente, segue os links para os respectivos arquivos.
+Caso você não deseje realizar o procedimento de geração dos arquivos .csv programaticamente, segue os links para os respectivos arquivos.
 
 - [2004](https://www.amazon.com/clouddrive/share/Jr377WcRRVy5EflToiUAT6fvvexvBXclDvwIxk4P2Sj)
 - [2005](https://www.amazon.com/clouddrive/share/6BuXxRe53uFToinkFwuDe9svGHVX3NWiyiBvTbRKdqs)
