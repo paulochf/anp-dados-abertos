@@ -1,24 +1,31 @@
-from schema.datamodel import PrecosParser
+from schema.datamodel import PrecoParser
 from pathlib import Path
 
-path = Path.cwd()/ 'raw'
+path = Path.cwd() / 'raw'
 files = list(path.glob("**/*.xml"))
 
-if len(files) !=0:
-    #inicia o processamento dos arquivos xml
-    for index, file_ in enumerate(files,1):
-        print(f"Processando o arquivo {file_}.")
-        filedata = PrecosParser(file_)
-        #processa os dados do arquivo file_
-        filedata.get_data()
-        #exporta para um arquivo csv
-        filename = file_.name[:-4] #coleta o ano do dado
-        filedata.data_to_csv(filename)
-        #adiciona os dados da instância ao container da classe
-        PrecosParser.add_data(filedata.data_container)
-    #exporta um arquivo único com todos os dados processados
-    PrecosParser.exporta_dados_csv('serie_precos_completa')
-    print(f"Finalizado o processamento de {index} arquivo(s).")
-else:
-    print("Não há arquivo(s) xml a ser(em) processado(s).")
+if len(files) == 0:
+    raise Exception("Não há arquivo(s) xml a ser(em) processado(s).")
 
+
+parsers = list()
+
+#inicia o processamento dos arquivos xml
+for index, file_ in enumerate(files, 1):
+    print(f"Processando o arquivo {file_}.")
+    filedata = PrecoParser(file_)
+
+    #processa os dados do arquivo file_
+    filedata.parse()
+
+    #exporta para um arquivo csv
+    filename = file_.name[:-4] #coleta o ano do dado
+    filedata.to_csv(f"{filename}.csv", filedata.data_container)
+
+    #adiciona os dados da instância ao container da classe
+    parsers.append(filedata)
+
+#exporta um arquivo único com todos os dados processados
+PrecoParser.all_to_csv('serie_precos_completa.csv', parsers)
+
+print(f"Finalizado o processamento de {index} arquivo(s).")
